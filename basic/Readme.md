@@ -1,11 +1,13 @@
+##DOCKER BÁSICO (PHP e MYSQL)
+
 https://www.youtube.com/watch?v=97jWpWp4Pnc
 
 https://hub.docker.com/
 
 
-mkdir www
-
-Criar 3 arquivos (pasta raiz, no GIT BASH):
+mkdir www<br />
+<br />
+Criar 3 arquivos (pasta raiz, no GIT BASH):<br />
 ```sh
 touch Dockerfile docker-compose.yml www/index.php
 ```
@@ -14,35 +16,36 @@ index.php
 <?php phpinfo(); ?>
 
 
-Dockerfile:
-Arquivo para criar imagens
-FROM php:7.2-apache
-RUN docker-php-ext-install mysqli
-RUN a2enmod rewrite
+Dockerfile:<br />
+Arquivo para criar imagens<br />
+FROM php:7.2-apache<br />
+RUN docker-php-ext-install mysqli<br />
+RUN a2enmod rewrite<br />
 
-docker-compose.yml
-Como vai utilizar essa imagem, arquivo do orquestrador, pode rodar o dockerfile ou pode rodar ele através docker-compose, organizará todos os containers
-version: '3.3'
+docker-compose.yml<br />
+Como vai utilizar essa imagem, arquivo do orquestrador, pode rodar o dockerfile ou pode rodar ele através docker-compose, organizará todos os containers<br /><br />
 
-services:
-  php:
-    build: .
-    ports:
-    - "80:80"
-    - "443:443"
-    volumes:
-    - ./www/:/var/www/html
-    links:
-    - db
-
-  db:
-    image: mysql:5.7
-    volumes:
-    - /var/lib/mysql
-    environment:
-    - MYSQL_ROOT_PASSWORD=myrootpass
-    - MYSQL_DATABASE=mydatabase
-
+version: '3.3'<br />
+<br />
+services:<br />
+  php:<br />
+    build: .<br />
+    ports:<br />
+    - "80:80"<br />
+    - "443:443"<br />
+    volumes:<br />
+    - ./www/:/var/www/html<br />
+    links:<br />
+    - db<br />
+<br />
+  db:<br />
+    image: mysql:5.7<br />
+    volumes:<br />
+    - /var/lib/mysql<br />
+    environment:<br />
+    - MYSQL_ROOT_PASSWORD=myrootpass<br />
+    - MYSQL_DATABASE=mydatabase<br />
+<br /><br />
 Na pasta raiz
 ```sh
 docker-compose -f "docker-compose.yml" up -d --build
