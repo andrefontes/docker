@@ -26,9 +26,9 @@ Dockerfile:<br />
 Arquivo para criar imagens<br />
 
 ```sh
-FROM php:7.2-apache<br />
-RUN docker-php-ext-install mysqli<br />
-RUN a2enmod rewrite<br />
+FROM php:7.2-apache
+RUN docker-php-ext-install mysqli
+RUN a2enmod rewrite
 ```
 
 docker-compose.yml<br />
