@@ -128,7 +128,8 @@ docker-compose -f "docker-compose.yml" up -d --build
 
 Wordpress: http://localhost/
 
-PhpMyAdmin: http:88//localhost/
+PhpMyAdmin: http://localhost:88/
+
 
 
 
