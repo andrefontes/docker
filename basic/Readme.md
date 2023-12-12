@@ -107,7 +107,7 @@ services:
    phpmyadmin:
     depends_on:
       - wordpress_db
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin/phpmyadmin:latest
     restart: always
     ports:
       - 88:80
@@ -129,7 +129,8 @@ docker-compose -f "docker-compose.yml" up -d --build
 Wordpress: http://localhost/
 
 PhpMyAdmin: http://localhost:88/
-
+Usuário: wordpress <br />
+Senha: wordpress<br />
 
 
 
