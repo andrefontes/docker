@@ -128,11 +128,11 @@ docker-compose -f "docker-compose.yml" up -d --build
 
 Wordpress: http://localhost/
 
-PhpMyAdmin: http://localhost:88/
+PhpMyAdmin: http://localhost:88/ <br />
 Usuário: wordpress <br />
 Senha: wordpress<br />
 
-
+<br /><br />
 
 Botão direito mouse (Attach Shell)
 ```sh
